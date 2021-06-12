@@ -1,0 +1,17 @@
+//Question: https://www.hackerrank.com/challenges/weather-observation-station-5/problem
+
+
+
+SELECT CITY,char_length(CITY)
+FROM STATION
+WHERE CITY=(SELECT min(CITY) FROM STATION 
+            WHERE char_length(CITY)=(select min(char_length(CITY)) from STATION));
+
+SELECT CITY,char_length(CITY)
+FROM STATION
+WHERE CITY=(SELECT max(CITY) FROM STATION 
+            WHERE char_length(CITY)=(select max(char_length(CITY)) from STATION));
+            
+/*
+Enter your query here.
+*/
