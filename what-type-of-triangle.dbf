@@ -1,0 +1,16 @@
+//Question: https://www.hackerrank.com/challenges/what-type-of-triangle/problem
+
+select 
+case
+when A+B>C and B+C>A and A+C>B THEN 
+ (case
+ when A=B AND B=C THEN 'Equilateral'
+ when A=B OR B=C OR A=C THEN 'Isosceles'
+ When A!=B AND A!=C AND B!=C THEN 'Scalene'
+ end)
+else 'Not A Triangle'
+end
+from TRIANGLES;/*
+Enter your query here.
+Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
+*/
